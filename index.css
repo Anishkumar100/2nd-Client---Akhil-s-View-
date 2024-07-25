@@ -1,0 +1,539 @@
+body {
+    background-color: #d1c3c3;
+    margin: 0;
+    padding: 0;
+    font-family: 'Caudex', serif;
+}
+
+#nav {
+    background-color: #DEDEDE;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+#navbeg {
+    flex: 1;
+    text-align: start;
+}
+
+#navbeg p {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+#navcenter {
+    flex: 1;
+    text-align: center;
+}
+
+#navimg {
+    max-width: 100%;
+    margin-left:50px;
+    height: auto;
+}
+
+#navend {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: end;
+    gap: 20px;
+}
+
+#navend .lol {
+    text-decoration: none;
+    color: black;
+}
+.lol p {
+    transition: color 0.3s ease, transform 0.3s ease; /* Add smooth transition for color and transform */
+}
+
+.lol p:hover {
+    color: #ff0000; /* Change color on hover */
+    transform: scale(1.1); /* Slightly enlarge the text on hover */
+}
+
+
+#navend .lol p {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 1200px) {
+    #navbeg p, #navend .lol p {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 768px) {
+    #nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #navbeg {
+        text-align: center;
+    }
+
+    #navimg
+    {
+        max-width:100px
+    }
+
+    #navcenter {
+        order: -1;
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    #navend {
+        justify-content: center;
+        width: 100%;
+    }
+
+    #navend .lol {
+        padding: 10px 0;
+    }
+}
+
+@media (max-width: 480px) {
+
+    #nav
+    {
+        position:static
+    }
+
+    #navbeg
+    {
+        display: none;
+    }
+    #navbeg p, #navend .lol p {
+        font-size: 1em;
+    }
+
+    #navimg
+    {
+        max-width:200px
+    }
+
+    #navend {
+        flex-direction: column;
+        align-items: start;
+
+    }
+
+    #navend .lol {
+        margin-bottom: 10px;
+
+    }
+}
+
+.carousel {
+    width: 100%;
+    min-height: 400px; /* Adjust the min height as needed */
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel-inner {
+    display: flex;
+    
+    animation: slide 12s infinite;
+}
+
+.carousel-item {
+    flex: 1 0 100%;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    display: block;
+}
+
+@keyframes slide {
+    0% { transform: translateX(0%); }
+    33.33% { transform: translateX(-100%); }
+    66.66% { transform: translateX(-200%); }
+    100% { transform: translateX(0%); }
+}
+
+@media (max-width: 600px) {
+    .carousel {
+        min-height: 200px; /* Adjust the min height for smaller screens */
+    }
+}
+
+.container {
+    margin-top: 10px;
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    transition: all 0.3s ease-in-out;
+}
+
+.container img {
+    width: 100%;
+    transition: transform 0.3s ease-in-out;
+}
+
+.text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    padding-left: 20px;
+    transition: opacity 0.3s ease-in-out;
+    opacity: 0;
+}
+
+.text-container p {
+    margin: 0;
+    transition: color 0.3s ease-in-out;
+}
+
+.container:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.container:hover img {
+    transform: scale(1.01);
+}
+
+.container:hover .text-container {
+    opacity: 1;
+}
+
+.container:hover .text-container p:first-of-type {
+    color: rgb(200, 0, 0); /* Darker red */
+}
+
+.container:hover .text-container p:last-of-type {
+    color: rgb(50, 50, 50); /* Darker black */
+}
+
+.description-container {
+    margin: 10px;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+    padding: 20px;
+    border: 2px solid #ccc;
+ 
+    background-color: #000000;
+    color: grey;
+    width: 100%;
+    max-width: 600px;
+}
+
+.description-container:hover {
+    border-color: #c10000;
+    transform: scale(1.01);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.description-container:hover p {
+    color: rgb(255, 255, 255);
+}
+
+.description-container p {
+    transition: color 0.6s ease-in-out;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 600px) {
+    .container, .description-container {
+        width: 90%;
+        margin: 10px auto;
+    }
+
+    .text-container {
+        padding-left: 10px;
+    }
+
+    .text-container p:first-of-type {
+        font-size: 24px;
+    }
+
+    .text-container p:last-of-type {
+        font-size: 18px;
+    }
+
+    .description-container p {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 400px) {
+    .text-container p:first-of-type {
+        font-size: 20px;
+    }
+
+    .text-container p:last-of-type {
+        font-size: 16px;
+    }
+
+    .description-container p {
+        font-size: 14px;
+    }
+
+}
+
+.pl {
+    display: block;
+    width: 9.375em;
+    height: 9.375em;
+  }
+  
+  .pl__arrows,
+  .pl__ring-rotate,
+  .pl__ring-stroke,
+  .pl__tick {
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+  
+  .pl__arrows {
+    animation-name: arrows42;
+    transform: rotate(45deg);
+    transform-origin: 16px 52px;
+  }
+  
+  .pl__ring-rotate,
+  .pl__ring-stroke {
+    transform-origin: 80px 80px;
+  }
+  
+  .pl__ring-rotate {
+    animation-name: ringRotate42;
+  }
+  
+  .pl__ring-stroke {
+    animation-name: ringStroke42;
+    transform: rotate(-45deg);
+  }
+  
+  .pl__tick {
+    animation-name: tick42;
+  }
+  
+  .pl__tick:nth-child(2) {
+    animation-delay: -1.75s;
+  }
+  
+  .pl__tick:nth-child(3) {
+    animation-delay: -1.5s;
+  }
+  
+  .pl__tick:nth-child(4) {
+    animation-delay: -1.25s;
+  }
+  
+  .pl__tick:nth-child(5) {
+    animation-delay: -1s;
+  }
+  
+  .pl__tick:nth-child(6) {
+    animation-delay: -0.75s;
+  }
+  
+  .pl__tick:nth-child(7) {
+    animation-delay: -0.5s;
+  }
+  
+  .pl__tick:nth-child(8) {
+    animation-delay: -0.25s;
+  }
+  
+  /* Animations */
+  @keyframes arrows42 {
+    from {
+      transform: rotate(45deg);
+    }
+  
+    to {
+      transform: rotate(405deg);
+    }
+  }
+  
+  @keyframes ringRotate42 {
+    from {
+      transform: rotate(0);
+    }
+  
+    to {
+      transform: rotate(720deg);
+    }
+  }
+  
+  @keyframes ringStroke42 {
+    from,
+      to {
+      stroke-dashoffset: 452;
+      transform: rotate(-45deg);
+    }
+  
+    50% {
+      stroke-dashoffset: 169.5;
+      transform: rotate(-180deg);
+    }
+  }
+  
+  @keyframes tick42 {
+    from,
+      3%,
+      47%,
+      to {
+      stroke-dashoffset: -12;
+    }
+  
+    14%,
+      36% {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  .uiverse {
+    position: relative;
+    background: #000000;
+    color: #ffffff;
+    padding: 15px;
+    margin: 10px;
+    border-radius: 10px;
+    width: 150px;
+    height: 50px;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+  .tooltip {
+    position: absolute;
+    top: 0;
+    font-size: 14px;
+    background: #ffffff;
+    color: #ffffff;
+    padding: 5px 8px;
+    border-radius: 5px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+  .tooltip::before {
+    position: absolute;
+    content: "";
+    height: 8px;
+    width: 8px;
+    background: #ffffff;
+    bottom: -3px;
+    left: 50%;
+    transform: translate(-50%) rotate(45deg);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+  .uiverse:hover .tooltip {
+    top: -45px;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+  
+  svg:hover span,
+  svg:hover .tooltip {
+    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+  }
+  
+  .uiverse:hover,
+  .uiverse:hover .tooltip,
+  .uiverse:hover .tooltip::before {
+    background: linear-gradient(320deg, rgb(3, 77, 146), rgb(0, 60, 255));
+    color: #ffffff;
+  }
+
+  #textone, #texttwo {
+    font-family: caudex;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 40px;
+    justify-content: center;
+    padding: 50px;
+    margin: 0;
+}
+
+@media (max-width: 1200px) {
+    #textone, #texttwo 
+    {
+
+        font-size: 36px;
+        padding: 40px;
+    }
+}
+
+@media (max-width: 992px) {
+    #textone, #texttwo {
+        font-size: 32px;
+        padding: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    #textone, #texttwo {
+        font-size: 28px;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    #textone, #texttwo {
+        font-size: 24px;
+        padding: 15px;
+    }
+}
+
+@media (max-width: 400px) {
+    #textone, #texttwo {
+        font-size: 20px;
+        padding: 10px;
+    }
+}
+@media (max-width: 900px) {
+    footer {
+        flex-wrap: wrap;
+    }
+    footer p, footer img {
+        width: 100%;
+        text-align: center;
+        margin: 10px 0;
+    }
+    footer img {
+        margin: 10px auto;
+    }
+}
+
+@media (max-width: 600px) {
+    footer {
+        flex-direction: column;
+    }
+    footer img {
+        margin: 10px auto;
+    }
+}

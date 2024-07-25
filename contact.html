@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="icon" href="image.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="contact.css">
+    
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caudex:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+</head>
+<body >
+    <div id="backvideo">
+        <video autoplay loop muted>
+            <source src="Stripes.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div style="display: flex;flex-direction: column;flex-wrap: wrap;align-items: center;justify-content: center;margin-top:5%">
+    <div class="form-card1">
+        <form class="form" onsubmit="return response(event);">
+            <p class="form-heading">Get In Touch</p>
+            
+            <div class="form-field">
+                <input onkeyup="welcome()" id="name" required placeholder="Name" class="input-field" type="text" />
+            </div>
+            
+            <div class="form-field">
+                <input required placeholder="Email" class="input-field" type="email" />
+            </div>
+            
+            <div class="form-field">
+                <input required placeholder="Subject" class="input-field" type="text" />
+            </div>
+            
+            <div class="form-field">
+                <textarea required placeholder="Message" cols="30" rows="3" class="input-field"></textarea>
+            </div>
+            
+            <button type="submit" class="sendMessage-btn">Send Message</button>
+        </form>
+    </div>
+
+    <div id="responseBox">
+        <p id="welcometext"></p>
+        <a href="Index.html" target="_self">
+            <button id="okbutton">Explore More</button>
+        </a>
+    </div>
+    </div>
+
+    <script src="contact.js"></script>
+</body>
+</html>
